@@ -5,13 +5,8 @@ import './App.css'
 function App() {
   const [students, setStudents] = useState([]);
 
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    age: '',
-    ailment: ''
-  });
-
+ 
+ 
 
   const fetchStudents = async () => {
     try {
@@ -53,11 +48,16 @@ function App() {
                 <h3>{student.name}</h3>
                 <p>Age: {student.age}</p>
                 <p>Email: {student.email}</p>
-              
+                <button 
+                  className="delete-btn" 
+                  onClick={() => studentDelete(patient._id)}
+                >
+                  Delete
+                </button>
               </div>
             ))
           ) : (
-            <p>No students found</p>
+            <p>No patients found</p>
           )}
         </div>
       </div>
